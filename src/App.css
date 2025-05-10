@@ -1,38 +1,227 @@
+/* General Body and Font */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F4F4F9;  /* Light gray background */
+  color: #333; /* Charcoal gray text */
+}
+
+/* App Container */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section {
+  padding: 60px 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  color: #003366; /* Dark Blue for headings */
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar Styles */
+.navbar {
+  background-color: #003366; /* Dark Blue for navbar */
+  padding: 15px 30px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo h1 {
+  font-size: 24px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar .nav-links {
+  list-style-type: none;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar .nav-links li {
+  margin: 0 15px;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+  color: #4A90E2; /* Soft Blue on hover */
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #4A90E2, #003366); /* Soft Blue to Dark Blue gradient */
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+}
+
+.hero img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 5px solid #fff; /* White border around image */
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Skills Section */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills span {
+  display: inline-block;
+  background-color: #FFF; /* White background for skill badges */
+  color: #003366; /* Dark Blue text */
+  margin: 10px;
+  padding: 12px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease;
+}
+
+.skills span:hover {
+  background-color: #4A90E2; /* Soft Blue background on hover */
+  color: white; /* White text on hover */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Project and Contact Sections */
+.project, .contact-info {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.project:hover, .contact-info:hover {
+  transform: translateY(-10px); /* Hover effect */
+}
+
+.project h3, .contact-info h3 {
+  color: #003366; /* Dark Blue for section titles */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.project p, .contact-info p {
+  color: #555; /* Darker gray text for body */
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background: #003366; /* Dark Blue for footer */
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #4A90E2; /* Soft Blue on hover */
+  text-decoration: underline;
+}
+
+footer .social-icons {
+  margin-top: 20px;
+}
+
+footer .social-icons a {
+  margin: 0 15px;
+  font-size: 24px;
+}
+
+footer .social-icons a:hover {
+  color: #4A90E2; /* Soft Blue hover effect for icons */
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    margin-top: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar.active .nav-links {
+    display: flex;
+  }
+
+  .navbar .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .skills span {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .project, .contact-info {
+    padding: 20px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .hero img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skills span {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  footer {
+    padding: 15px;
   }
 }
